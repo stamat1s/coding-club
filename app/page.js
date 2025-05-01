@@ -1,7 +1,26 @@
+'use client'
 import Link from 'next/link';
-import { BsDiscord } from "react-icons/bs";
+import { BsDiscord, BsPeople } from "react-icons/bs";
+import RollingDigits from "../components/RollingDigits.jsx";
+import React, { useState, useEffect } from "react";
+import countMembers from "../backend/countMembers";
+
 //change
 export default function Home() {
+  const [memberCount, setMemberCount] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const members = await countMembers();
+      setMemberCount(members ? members : 0);
+    };
+
+    fetchData();
+
+  }, []);
+
+
+
   return (
     <main className="font-sans bg-white">
       {/* Navbar with linear gradient background */}
@@ -36,7 +55,7 @@ export default function Home() {
         }}
       >
         {/* Container with Transparent Border for Title, Description, and Button */}
-        <div className="border-4 border-transparent p-6 rounded-xl bg-white bg-opacity-80 shadow-lg">
+        <div className="border-4 border-transparent p-6 rounded-xl bg-white/70 bg-opacity-80 shadow-lg">
           {/* Larger Title */}
           <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-indigo-600 to-[rgb(119,42,172)] bg-clip-text text-transparent">Καλώς ήρθες στο Coding Club!</h1>
           {/* Description below the Title */}
@@ -55,8 +74,19 @@ export default function Home() {
             <BsDiscord className="text-xl" />
             Join Discord
           </a>
-         
-        </div>
+          <div className="flex justify-center items-center mt-4">
+  <div className="bg-gradient-to-r from-blue-600 to-[rgb(119,42,172)] text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-indigo-700 transition inline-flex items-center gap-2 shadow-lg">
+    <BsPeople className="text-xl" />
+    <span className="text-base font-medium">
+      <RollingDigits result={memberCount} />
+      <span className="ml-1">members</span>
+    </span>
+  </div>
+</div>
+
+</div>
+
+      
       </section>
 
       {/* Sections */}
