@@ -1,11 +1,19 @@
 import Link from 'next/link';
+import { BsDiscord } from "react-icons/bs";
 //change
 export default function Home() {
   return (
     <main className="font-sans bg-white">
       {/* Navbar with linear gradient background */}
       <nav className="bg-gradient-to-r from-indigo-600 to-[rgb(119,42,172)] border-b border-gray-200 p-4 flex justify-between items-center sticky top-0 z-50">
-        <div className="text-xl font-bold text-white rgb(119,42,172)" >DIT Coding Club</div>
+      <div>
+      <img 
+      src="/images.png" 
+      alt="Logo" 
+      className="h-8 w-8 rounded-full" // Adjust size and shape as needed
+    />
+        <span className="text-xl font-bold text-white rgb(119,42,172)" >DIT Coding Club</span>
+    </div>
         <div className="space-x-4">
           <Link href="#security" className="text-white hover:text-indigo-200">Security</Link>
           <Link href="#gamedev" className="text-white hover:text-indigo-200">Game Dev</Link>
@@ -30,10 +38,10 @@ export default function Home() {
         {/* Container with Transparent Border for Title, Description, and Button */}
         <div className="border-4 border-transparent p-6 rounded-xl bg-white bg-opacity-80 shadow-lg">
           {/* Larger Title */}
-          <h1 className="text-5xl font-extrabold mb-4 text-indigo-800">Καλώς ήρθες στο Coding Club</h1>
+          <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-indigo-600 to-[rgb(119,42,172)] bg-clip-text text-transparent">Καλώς ήρθες στο Coding Club!</h1>
           {/* Description below the Title */}
           <p className="text-lg mb-6 text-gray-600">
-            μια δυναμική κοινότητα φοιτητών που μοιράζονται το πάθος τους για την τεχνολογία και τον προγραμματισμό! 
+            Mια δυναμική κοινότητα φοιτητών που μοιράζονται το πάθος τους για την τεχνολογία και τον προγραμματισμό! 
             <p>🖥️ 👾 🤓 🚀</p>
           </p>
           <p></p>
@@ -41,10 +49,13 @@ export default function Home() {
           <a
             href="https://discord.com/invite/your-discord-link"
             target="_blank"
-            className="bg-gradient-to-r from-blue-600 to-[rgb(119,42,172)] text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-indigo-700 transition mb-6"
+            className="bg-gradient-to-r from-blue-600 to-[rgb(119,42,172)] text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-indigo-700 transition mb-6
+            inline-flex items-center gap-2"
           >
-            μπες
+            <BsDiscord className="text-xl" />
+            Join Discord
           </a>
+         
         </div>
       </section>
 
