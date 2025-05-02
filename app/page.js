@@ -71,11 +71,11 @@ export default function Home() {
           <span className="text-xl font-bold text-white rgb(119,42,172)">DIT Coding Club</span>
         </div>
         <div className="space-x-4">
-          <Link href="#security" className="text-white hover:text-indigo-200">Security</Link>
-          <Link href="#gamedev" className="text-white hover:text-indigo-200">Game Dev</Link>
-          <Link href="#cp" className="text-white hover:text-indigo-200">Competitive</Link>
-          <Link href="#hackathons" className="text-white hover:text-indigo-200">Hackathons</Link>
-          <Link href="#opensource" className="text-white hover:text-indigo-200">Open Source</Link>
+          <Link href="#security" className="text-white hover:text-indigo-200 font-bold">Security</Link>
+          <Link href="#gamedev" className="text-white hover:text-indigo-200 font-bold">Game Dev</Link>
+          <Link href="#cp" className="text-white hover:text-indigo-200 font-bold">Competitive</Link>
+          <Link href="#hackathons" className="text-white hover:text-indigo-200 font-bold">Hackathons</Link>
+          <Link href="#opensource" className="text-white hover:text-indigo-200 font-bold">Open Source</Link>
         </div>
       </nav>
 
@@ -93,7 +93,7 @@ export default function Home() {
       >
         <div className="border-4 border-transparent p-6 rounded-xl bg-white/70 bg-opacity-80 shadow-lg">
           <h1 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-indigo-600 to-[rgb(119,42,172)] bg-clip-text text-transparent">Καλώς ήρθες στο Coding Club!</h1>
-          <p className="text-lg mb-6 text-gray-600">
+          <p className="text-lg mb-6 text-gray-600 font-bold">
             Μια δυναμική κοινότητα φοιτητών που μοιράζονται το πάθος τους για την τεχνολογία και τον προγραμματισμό!
           </p>
           <div className="mt-[6px] transform translate-y-[-10px]">🖥️ 👾 🤓 🚀</div>
@@ -141,7 +141,7 @@ function Section({ id, title, description, background, imageSrc, index }) {
   return (
     <section
       id={id}
-      className={`${background} border border-gray-200 shadow-xl rounded-xl p-8 my-8 flex flex-col lg:flex-row ${isImageRight ? 'lg:flex-row-reverse' : ''} items-center`}
+      className={`${background} border border-gray-200 shadow-xl rounded-xl p-8 my-8 flex gap-3 flex-col lg:flex-row ${isImageRight ? 'lg:flex-row-reverse' : ''} items-center`}
     >
       {/* Image */}
       <div
